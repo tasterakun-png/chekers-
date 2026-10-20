@@ -1,0 +1,14 @@
+{
+  "name": "gmail-checker-prototype",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Privacy-conscious Gmail format, MX and inbox verification prototype",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "nodemailer": "^6.10.0"
+  }
+}
