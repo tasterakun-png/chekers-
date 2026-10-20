@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Periksa format email Gmail, konfigurasi domain, dan verifikasi akses inbox tanpa memasukkan kata sandi.">
+  <title>Gmail Checker</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="brand">
+      <div class="brand-icon" aria-hidden="true">✉</div>
+      <p class="eyebrow">EMAIL DIAGNOSTICS</p>
+      <h1>Gmail Checker</h1>
+      <p class="subtitle">Periksa format email dan verifikasi akses inbox tanpa kata sandi.</p>
+    </header>
+
+    <section class="panel" aria-labelledby="check-heading">
+      <h2 id="check-heading">Periksa alamat Gmail</h2>
+      <form id="email-form">
+        <label for="email">Alamat email</label>
+        <input id="email" name="email" type="email" placeholder="nama@gmail.com" autocomplete="email" required maxlength="254">
+        <button id="check-button" type="submit">Periksa email</button>
+      </form>
+
+      <div id="result" class="result hidden" role="status" aria-live="polite"></div>
+
+      <div class="divider"></div>
+      <h2>Verifikasi akses inbox</h2>
+      <p class="muted">Kami akan mengirim kode enam digit ke alamat yang kamu masukkan. Jangan pernah masukkan kata sandi Google di sini.</p>
+      <button id="send-code" class="button secondary" type="button" disabled>Kirim kode verifikasi</button>
+
+      <form id="verify-form" class="verify-form hidden">
+        <label for="code">Kode verifikasi 6 digit</label>
+        <input id="code" name="code" inputmode="numeric" pattern="[0-9]{6}" maxlength="6" placeholder="000000" required>
+        <button type="submit">Verifikasi kode</button>
+      </form>
+      <div id="verify-result" class="result hidden" role="status" aria-live="polite"></div>
+    </section>
+
+    <aside class="notice">
+      <strong>Perlu diketahui</strong>
+      <p>Format valid dan DNS domain tidak membuktikan bahwa akun Gmail tertentu terdaftar. Kode yang berhasil diverifikasi membuktikan akses inbox pada saat itu, bukan status login perangkat atau aktivitas akun secara keseluruhan.</p>
+    </aside>
+    <footer>Jaga privasi. Jangan periksa alamat email orang lain tanpa izin.</footer>
+  </main>
+  <script src="/app.js" defer></script>
+</body>
+  </html>
+  
